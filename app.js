@@ -192,3 +192,17 @@ digPow(46288, 3)
 
 // The second value in the first integer array is 0, since the bus is empty in the first bus stop.
 
+const busStops = [[3, 0], [9, 1], [4, 10], [12, 2], [6, 1], [7, 10]]
+
+function stopBusStations(busStops) {
+    let hopOn = 0
+    let hopOff = 0
+    for (let i = 0; i < busStops.length; i++) {
+        hopOn += busStops[i][0]
+        hopOff += busStops[i][1]
+    }
+    const passengersLeft = hopOn - hopOff
+    return passengersLeft <= 0 ? 0 : passengersLeft
+}
+
+stopBusStations(busStops);
