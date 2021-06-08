@@ -206,3 +206,49 @@ function stopBusStations(busStops) {
 }
 
 stopBusStations(busStops);
+
+
+
+// Move the first letter of each word to the end of it, then add "ay" to the 
+// end of the word. Leave punctuation marks untouched.
+
+const str = 'Pig latin is cool!'
+
+function pigIt(str) {
+    let punctuation = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+    const arrStr = str.split(' ')
+    // console.log(arrStr)
+    // **************************
+    let puncCheck = arrStr.length - 1
+    // console.log(arrStr)
+    // console.log(puncCheck)
+    // console.log(arrStr[puncCheck])
+    // **************************
+    // **************************
+
+    // **************************
+    let newArr = []
+    for (let i = 0; i < arrStr.length; i++) {
+        let getArrAlph = `${arrStr[i][0]}ay`;
+
+
+
+        let removeFChar = arrStr[i].split('').slice(1, arrStr[i].length).join('');
+        // let punctCharGrab = removeFChar.indexOf('!')
+        // let punctCharGrab = removeFChar.indexOf('!')
+        // let removePunc = arrStr[i].split('').slice(punctCharGrab, arrStr[i].length);
+
+        // let joinChar = removeFChar.join('')
+        let concatStr = `${removeFChar}${getArrAlph}`;
+        // console.log(removeFChar)
+        // console.log(punctCharGrab)
+        // console.log(removePunc)
+        // newArr.push(concatStr)
+        // console.log(concatStr)
+    }
+    console.log(newArr.join(' '))
+    // return newArr.join(' ')
+    // console.log(arrStr)
+}
+
+pigIt(str)
