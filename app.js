@@ -246,7 +246,7 @@ function pigIt(str) {
         // newArr.push(concatStr)
         // console.log(concatStr)
     }
-    console.log(newArr.join(' '))
+    // console.log(newArr.join(' '))
     // return newArr.join(' ')
     // console.log(arrStr)
 }
@@ -285,16 +285,82 @@ pigIt(str)
 // persistence(4) === 0 
 // because 4 is already a one-digit number
 
-const num = 39
+const num1 = 999
 
 function persistence(num) {
-    if (num >= 0 && num <= 9) {
-        return 0
-    }
-    let numArr = Array.from(num.toString()).map(Number);
-    for (let i = 0; i < numArr.length; i++) {
 
+    let count = 0
+    // let calcPass = 0
+
+
+
+    if (num1 >= 10) {
+        let numArr = Array.from(num1.toString()).map(Number);
+        let calcNum = 1
+        // count = 1
+        let scopeCount = 1
+        for (let i = 0; i < numArr.length; i++) {
+            calcNum = calcNum * numArr[i]
+            scopeCount += i
+            // count += i
+            // console.log(numArr[i])
+        }
+        // scopeCount += 1
+
+        count = scopeCount
+        // calcPass = calcNum
+        // console.log(scopeCount)
+        // console.log(calcNum)
+        // persistence(calcNum)
     }
+
+    if (num1 >= 0 && num1 <= 9) {
+        return count
+        // console.log(count)
+    }
+
+    // return count
+
+    // console.log(count)
+    // console.log(calcPass)
 }
 
-persistence(num)
+persistence(num1)
+
+// if (num >= 0 && num <= 9) {
+//     // return 0
+//     console.log(0)
+//     return
+// } else {
+//     for (let i = 0; i < numArr.length; i++) {
+
+//     }
+// }
+// This below works
+// resourse 
+// https://stackoverflow.com/questions/54755266/multiplicative-persistence-codewars-challenge
+const num = 999
+
+function persistence_1(num) {
+
+    let numArr = num.toString().split('')
+    let list
+    let count = 0
+    while (numArr.length > 1) {
+
+        list = numArr.reduce((acc, curr) => {
+            return acc *= curr
+        })
+        numArr = list.toString().split('')
+        count++
+
+    }
+
+    return count
+}
+
+// persistence_1(num)
+
+
+
+
