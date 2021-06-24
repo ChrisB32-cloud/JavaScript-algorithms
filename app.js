@@ -429,8 +429,37 @@ function productFib(prod) {
 productFib(prod)
 
 // count += i + j
-        // arrFib.push(count)
-        // j++
-
+// arrFib.push(count)
+// j++
 // arrFib.push(arrFib[i - 2] + arrFib[i - 1])
-        // console.log(arrFib)
+// console.log(arrFib)
+
+// ****************************
+
+// Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+
+// Examples
+//     "the-stealth-warrior" gets converted to "theStealthWarrior"
+//     "The_Stealth_Warrior" gets converted to "TheStealthWarrior"
+
+const str_1 = "the-stealth-warrior";
+
+function toCamelCase(str_1) {
+    let regex = /_|-|,/g;
+    const newStrA = str_1.replace(regex, ' ')
+    const arrString = newStrA.split(' ')
+    let pushStr = []
+    for (let i = 0; i < arrString.length; i++) {
+        let splitString = arrString[i].split('')
+        let upperCase = [arrString[i][0].toUpperCase()]
+        splitString.shift()
+        let concatStr = upperCase.concat(splitString)
+        let joinStr = concatStr.join('')
+        pushStr.push(joinStr)
+        // console.log(joinStr)
+    }
+    // console.log(pushStr.join(''))
+    return pushStr.join('')
+}
+
+toCamelCase(str_1)
