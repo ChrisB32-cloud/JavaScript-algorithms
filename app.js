@@ -463,3 +463,117 @@ function toCamelCase(str_1) {
 }
 
 toCamelCase(str_1)
+
+
+// ARRAY DIFF
+
+// Your goal in this kata is to implement a difference function, which 
+// subtracts one list from another and returns the result.
+
+// It should remove all values from list a, which are present in 
+// list b keeping their order.
+
+const a1 = [1, 2, 3];
+const b1 = [2, 3];
+
+function arrayDiff(a1, b1) {
+    let j = 0
+    let matchArr = []
+
+    if (a1 === []) {
+        return (a1, b1, a1, `a was [${a1}], b was [${b1}]`)
+    }
+    if (b1 === []) {
+        return (a1, b1, b1, `a was [${a1}], b was [${b1}]`)
+    }
+
+    for (let i = 0; i < a1.length; i++) {
+        if (a1[i] === b1[j]) {
+            // console.log(a1[i])
+            // matchArr.push(a1[i])
+            let indOf = a1.indexOf(a1[i])
+            a1.splice(indOf, 1)
+            console.log(indOf)
+            j++
+        }
+    }
+    // return (a1, b1, matchArr, `a was [${a1}], b was [${b1}]`)
+    // console.log(a1, b1, `a was [${a1}], b was [${b1}]`)
+    // console.log(a1)
+}
+
+// arrayDiff(a1, b1)
+
+
+
+// The rgb function is incomplete. Complete it so that passing in RGB decimal values will result 
+// in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. 
+// Any values that fall out of that range must be rounded to the closest valid value.
+
+// Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
+
+// The following are examples of expected output values:
+
+function rgbToHex(hex) {
+    if (hex < 0) {
+        hex = 0
+    }
+    if (hex > 255) {
+        hex = 255
+    }
+    let hexString = hex.toString(16);
+    return hex.lenght === 1 ? "0" + hexString : hexString;
+}
+
+function rgbFunc(r, g, b) {
+    // complete this function  
+
+    // console.log(rgbToHex(r) + rgbToHex(g) + rgbToHex(b))
+    // if (rgbToHex(r) + rgbToHex(g) + rgbToHex(b) === '000') {
+    //     return "#" + '000000'
+    // } else {
+    //     return "#" + rgbToHex(r) + rgbToHex(g) + rgbToHex(b);
+    // }
+    return "#" + rgbToHex(r) + rgbToHex(g) + rgbToHex(b);
+
+}
+
+
+// rgbFunc(255, 255, 255)
+
+
+// You probably know the "like" system from Facebook and other pages. 
+// People can "like" blog posts, pictures or other items. We want to create the 
+// text that should be displayed next to such an item.
+
+// Implement a function likes :: [String] -> String, which must take in input 
+// array, containing the names of people who like an item. It must return the display 
+// text as shown in the examples:
+const names = ["Jacob", "Alex", "Clark", "Quint", "Bill"]
+
+function likes(names) {
+    // TODO
+    if (names.length === 0) {
+        return 'no one likes this'
+    }
+    if (names.length - 1 === 0) {
+        return `${names[0]} likes this`;
+    }
+    if (names.length - 1 === 1) {
+        return `${names[0]} and ${names[1]} like this`;
+    }
+    if (names.length - 1 === 2) {
+        return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+    }
+    if (names.length - 1 > 2) {
+        let count = 0
+        for (let i = 0; i < names.length; i++) {
+            count += 1
+        }
+        return `${names[0]}, ${names[1]} and ${count - 2} others like this`
+    }
+}
+
+likes(names)
+
+
