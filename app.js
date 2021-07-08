@@ -549,22 +549,31 @@ function rgbFunc(r, g, b) {
 // Implement a function likes :: [String] -> String, which must take in input 
 // array, containing the names of people who like an item. It must return the display 
 // text as shown in the examples:
+
+// Array of names
 const names = ["Jacob", "Alex", "Clark", "Quint", "Bill"]
 
 function likes(names) {
     // TODO
+
+    // Checking if names array is empty
     if (names.length === 0) {
         return 'no one likes this'
     }
+    // Checking if names array has atleast one name
     if (names.length - 1 === 0) {
         return `${names[0]} likes this`;
     }
+    // Checking if names array has two name
     if (names.length - 1 === 1) {
         return `${names[0]} and ${names[1]} like this`;
     }
+    // Checking if names array has atleast three name
     if (names.length - 1 === 2) {
         return `${names[0]}, ${names[1]} and ${names[2]} like this`;
     }
+    // Checking if names array has more than three names, if so
+    // showing the first two then showing how many others like the post
     if (names.length - 1 > 2) {
         let count = 0
         for (let i = 0; i < names.length; i++) {
@@ -574,6 +583,7 @@ function likes(names) {
     }
 }
 
+// Calling likes function
 likes(names)
 
 
