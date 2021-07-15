@@ -587,3 +587,50 @@ function likes(names) {
 likes(names)
 
 
+// What is an anagram? Well, two words are anagrams of each other if they both contain the 
+// same letters. For example:
+// Write a function that will find all the anagrams of a word from a list. You will be 
+// given two inputs a word and an array with words. You should return an 
+// array of all the anagrams or an empty array if there are none. For example:
+
+const word = 'racer'
+const words = ['crazer', 'carer', 'racar', 'caers', 'racer']
+
+function anagrams(word, words) {
+    let anagramCount = []
+    const wordLength = word.split('')
+    for (let i = 0; i < words.length; i++) {
+        const splitWord = words[i].split('')
+        // console.log(splitWord)
+        if (wordLength.lenght === splitWord.lenght) {
+
+        }
+        // console.log(words[i])
+    }
+    // console.log(wordLength)
+}
+
+// anagrams(word, words) 
+
+
+// It's the academic year's end, fateful moment of your school report.The averages 
+// must be calculated.All the students come to you and entreat you to 
+// calculate their average for them.Easy! You just need to write a script.
+
+// Return the average of the given array rounded down to its nearest integer.
+
+// The array will never be empty.
+
+const marks = [1, 2, 3, 4, 5,]
+
+function getAverage(marks) {
+    //TODO : calculate the downward rounded average of the marks array
+    // console.log(marks)
+    let markCounter = 0
+    for (let i = 0; i < marks.length; i++) {
+        markCounter += marks[i]
+    }
+    return Math.floor(markCounter / marks.length)
+}
+
+getAverage(marks)
