@@ -668,3 +668,16 @@ function fizzbuzz(n) {
 }
 
 fizzbuzz(n)
+
+
+
+// Work with pure functions
+
+const pureArray = [1, 2, 3, 4]
+
+function pureFunctionArray(arr, num) {
+    let immu = [...arr, num]
+    return immu
+}
+
+pureFunctionArray(pureArray, 5)
