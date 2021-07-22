@@ -681,3 +681,22 @@ function pureFunctionArray(arr, num) {
 }
 
 pureFunctionArray(pureArray, 5)
+
+// Convert number to reversed array of digits
+// Given a random non-negative number, you have to return the 
+// digits of this number within an array in reverse order.
+// Example:
+// 348597 => [7,9,5,8,4,3]
+
+const z = 348597
+
+function digitize(n) {
+    let catchRev = []
+    let revString = n.toString().split('').reverse()
+    for (let i = 0; i < revString.length; i++) {
+        catchRev.push(parseInt(revString[i]))
+    }
+    return catchRev
+}
+
+digitize(z)
